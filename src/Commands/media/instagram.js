@@ -35,8 +35,7 @@ module.exports = {
                 M.from,
                 {
                     video: buffer,
-                    caption: type,
-                    gifPlayback: true
+                    caption: response.data.caption
                 },
                 {
                     quoted: M
