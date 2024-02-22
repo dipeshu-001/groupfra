@@ -30,7 +30,6 @@ module.exports = {
             }
 
             const { url: videoUrl, type } = urls[0]; // Access the first URL directly
-
             const buffer = await client.utils.getBuffer(videoUrl);
             await client.sendMessage(
                 M.from,
