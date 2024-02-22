@@ -27,7 +27,7 @@ module.exports = {
             // if (!data.urls || !data.urls.length) {
             //     return await M.reply('❌ No video found for the provided URL');
             // }
-        var bobuff = await client.utils.getBuffer(response.data.urls[0].url)
+        var bobuff = await client.utils.getBuffer(response.urls[0].url)
         // var bogif = await client.utils.gifToMp4(bobuff)
 
             const videoUrl = data.urls[0].url;
