@@ -7,46 +7,44 @@ module.exports = {
     exp: 5,
     description: 'Downloads given Instagram Video and sends it',
     async execute(client, arg, M) {
-        try {
-            if (!arg.length) return await M.reply('❌ Please provide an Instagram URL');
-            
-            const url = arg;
-            
-            if (
-                !(
-                    url.includes('instagram.com/p/') ||
-                    url.includes('instagram.com/reel/') ||
-                    url.includes('instagram.com/tv/')
-                )
+        if (!arg.length) return await M.reply('❌ Please provide an Instagram URL');
+
+        const url = arg;
+        console.log(url);
+
+        if (
+            !(
+                url.includes('instagram.com/p/') ||
+                url.includes('instagram.com/reel/') ||
+                url.includes('instagram.com/tv/')
             )
-                return await M.reply('❌ Wrong URL! Only Instagram posted videos, TV, and reels can be downloaded');
+        )
+            return await M.reply('❌ Wrong URL! Only Instagram posted videos, TV, and reels can be downloaded');
 
+        try {
             const response = await axios.get(`https://weeb-api.vercel.app/insta?url=${url}`);
-            
+            const { urls } = response.data;
 
-            // if (!data.urls || !data.urls.length) {
-            //     return await M.reply('❌ No video found for the provided URL');
-            // }
-        var bobuff = await client.utils.getBuffer(response.urls[0].url)
-        // var bogif = await client.utils.gifToMp4(bobuff)
+            if (urls.length === 0) {
+                return await M.reply('❌ No video found in the provided URL.');
+            }
 
-            const videoUrl = data.urls[0].url;
-
-            // Now you can use the videoUrl as needed, for example sending it as a message
+            const { url: videoUrl, type } = urls[0]; // Access the first URL directly
+            const buffer = await client.utils.getBuffer(videoUrl);
             await client.sendMessage(
                 M.from,
                 {
-                  video: bobuff,
-                  caption: data.caption,
-                  gifPlayback: true
+                    video: buffer,
+                    caption: type,
+                    gifPlayback: true
                 },
                 {
-                  quoted: M
+                    quoted: M
                 }
-                );
+            );
         } catch (error) {
             console.error('Error fetching and sending Instagram video:', error);
-            await M.reply('❌ Error while getting video data');
+            await M.reply('❌ Error while fetching or sending the video.');
         }
     }
 };
