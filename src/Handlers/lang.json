@@ -1,0 +1,13 @@
+{
+    "en": {
+      "greeting": "Hello!",
+      "farewell": "Goodbye!",
+      "welcome": "Welcome to the chat bot!"
+    },
+    "ur": {
+      "greeting": "Hello!",
+      "farewell": "Khuda Hafiz!",
+      "welcome": "hmm!"
+    }
+  }
+  

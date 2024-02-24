@@ -6,7 +6,7 @@ module.exports = {
     react: "✅",
     description: 'Deletes the quoted message',
     async execute(client, arg, M) {
-        if (!M.quoted) return M.reply('Quote the message that you want me to delete, Baka!')
+        if (!M.quoted) return M.reply('Jis message ko delete krna hn usko quote kro!')
         await client.sendMessage(M.from, {
             delete: M.quoted.key
         })

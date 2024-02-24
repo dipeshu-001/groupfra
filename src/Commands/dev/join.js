@@ -9,13 +9,13 @@ module.exports = {
     async execute(client, arg, M) {
        try{
 
-        if (!arg) return M.reply('Sorry you did not give any group link!')
-        if (!arg.includes('whatsapp.com')) return M.reply('Sorry you did not give any valid group link!')
+        if (!arg) return M.reply('Aap ne koi group link nhi diya!')
+        if (!arg.includes('whatsapp.com')) return M.reply('Aap ne koi sai group link nhi diya!')
         const JoinCode = arg.split('https://chat.whatsapp.com/')[1]
         client
             .groupAcceptInvite(JoinCode)
             .then((res) => M.reply('Joined'))
-            .catch((res) => M.reply('Something went wrong please check the link'))
+            .catch((res) => M.reply('Group link ma koi kharabi h'))
 
        }catch(err){
       await client.sendMessage(M.from , {image: {url: `${client.utils.errorChan()}`} , caption: `${client.utils.greetings()} Error-Chan Dis\n\nError:\n${err}`})

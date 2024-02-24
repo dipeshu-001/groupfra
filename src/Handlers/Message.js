@@ -149,15 +149,15 @@ module.exports = MessageHandler = async (messages, client) => {
             return M.reply('This command only can be accessed by the mods')
         if (!nsfw.includes(from) && command.category == 'nsfw')
             return M.reply('Nsfw is not activated here')
-        const aku = '923087880256@s.whatsapp.net';
+        // const aku = '923087880256@s.whatsapp.net';
 
-        if (M.sender === aku) {
-            const reactionMessage = { react: { text: '🐦‍⬛', key: M.key } };
-            await client.sendMessage(from, reactionMessage);
-        } else if (isCmd && M.sender === aku) {
-            const reactionMessage = { react: { text: '🐦‍⬛', key: M.key } };
-            await client.sendMessage(from, reactionMessage);
-        }
+        // if (M.sender === aku) {
+        //     const reactionMessage = { react: { text: '🐦‍⬛', key: M.key } };
+        //     await client.sendMessage(from, reactionMessage);
+        // } else if (isCmd && M.sender === aku) {
+        //     const reactionMessage = { react: { text: '🐦‍⬛', key: M.key } };
+        //     await client.sendMessage(from, reactionMessage);
+        // }
             
         const cooldownAmount = (command.cool ?? 3) * 1000;
         const time = cooldownAmount + Date.now();

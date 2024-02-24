@@ -12,7 +12,7 @@ const groupMembers = groupMetadata?.participants || []
 const groupAdmins = groupMembers.filter((v) => v.admin && v.id !== '15065034983@s.whatsapp.net').map((v) => v.id) 
 
 await client.groupParticipantsUpdate(M.from, groupAdmins, 'demote').then((res) => {
-    M.reply(`Done! demoting ${groupAdmins.length} users`)
+    M.reply(`Done! ${groupAdmins.length} in sab ko admin se hata diya hn`)
 })
 
         

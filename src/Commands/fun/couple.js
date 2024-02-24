@@ -18,7 +18,7 @@ module.exports = {
             getRandom2 += member[Math.floor(Math.random() * member.length)]
         }
 
-        let text = `@${getRandom.split('@')[0]} ❤️ @${getRandom2.split('@')[0]} Cieeee, What's Going On❤️💖👀`
+        let text = `@${getRandom.split('@')[0]} ki bund @${getRandom2.split('@')[0]} ne mar li ❤️💖👀`
 
         client.sendMessage(M.from , {text: text , mentions:  [getRandom , getRandom2]} , {quoted: M} )
         

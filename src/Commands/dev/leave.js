@@ -6,7 +6,7 @@ module.exports = {
     react: "✅",
     description: 'Bot leaves the group',
     async execute(client, arg, M) {
-        client.groupLeave(M.from).catch((res) => M.reply('Something went wrong please check the link'))
+        client.groupLeave(M.from).catch((res) => M.reply('Group ke link ma koi kharabi hn'))
     }
 }
 //M.quoted.mtype === 'imageMessage',

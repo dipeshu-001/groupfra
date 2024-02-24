@@ -8,7 +8,7 @@ module.exports = {
   async execute(client, arg, M) {
       if (M.quoted?.participant) M.mentions.push(M.quoted.participant)
           
-          if (!M.mentions.length) return M.reply('Mention a user you want to add as mod, Baka!')
+          if (!M.mentions.length) return M.reply('Jis user ko aap Mod banana chaht usko tag kre')
     const mention = M.mentions[0]
 
   //   if(!mention) return M.reply(``)
@@ -18,6 +18,6 @@ module.exports = {
 
     // Send a confirmation message
 
-    M.reply(`Successfully added @${(await client.contact.getContact(mention, client)).username} as a mod`);
+    M.reply(`@${(await client.contact.getContact(mention, client)).username} mod bana diya gaya hn`);
   }
 };

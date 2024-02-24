@@ -33,7 +33,7 @@ module.exports = {
             })
         }
         
-        M.reply(`✅ Broadcast Message sent to *${res.length} groups*.`)
+        M.reply(`✅ Broadcast Message ko *${res.length} groups*.`)
     
     }catch(err){
         await client.sendMessage(M.from , {image: {url: `${client.utils.errorChan()}`} , caption: `${client.utils.greetings()} Error-Chan Dis\n\nError:\n${err}`})

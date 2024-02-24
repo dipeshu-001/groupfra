@@ -13,7 +13,9 @@ module.exports = {
         maker.textpro("https://textpro.me/create-3d-neon-light-text-effect-online-1028.html", [
     `${arg}`,]).then((data) => client.sendMessage(M.from, { image: { url: data }, caption: `Here you go` }, { quoted: M }))
     //Our beloved error chan. No one can stop her!
-    .catch((err) => client.sendMessage(M.from , {image: {url: `${client.utils.errorChan()}`} , caption: `${client.utils.greetings()} Error-Chan Dis\n\nError:\n${err}`}))
+    .catch((err) => 
+    //client.sendMessage(M.from , {image: {url: `${client.utils.errorChan()}`} , caption: `${client.utils.greetings()} Error-Chan Dis\n\nError:\n${err}`}) 
+    console.log(err))
     
     }
 }

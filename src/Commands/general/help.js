@@ -48,8 +48,7 @@ async execute(client, arg, M) {
         //   )}*\n\n${categories[category].map((cmd) => `${client.prefix}${cmd}`).join(', ')}\`\`\`\n\n`
   
         
-        let message = `*${client.utils.greetings()}* ${pushName}.Watashiwa ${client.utils.capitalize(client.name)} tomōshimasu\n\n🧧 Prefix : [ ${client.prefix} ]\n\n💡 *Tips:*\n\n→ *Script:* This private script is available for sale. Contact me at 923087880256 for more information.\n→ Type *${client.prefix}help* <Command-Name> to see command description and usage.📝 Here's the Commands listed below:\n\n${commands}`
-        message += `🗃️ Thanks for using ${client.utils.capitalize(client.name)}. If you find me helpful, please share me with your friends and leave a review! 🌟`
+        let message = `*${client.utils.greetings()}* ${pushName}.Watashiwa ${client.utils.capitalize(client.name)} tomōshimasu\n\n🧧 Prefix : [ ${client.prefix} ]\n\n💡 *Tips:*\n\n→ Type *${client.prefix}help* <Command-Name> to see command description and usage.📝 Here's the Commands listed below:\n\n${commands}`
         const buffer = await client.utils.getBuffer('https://i.imgur.com/ZgrSw7W.jpg')
         
         await client.sendMessage(
