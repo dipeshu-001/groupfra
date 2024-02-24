@@ -40,7 +40,7 @@ module.exports = {
                 await client.sendMessage(
                     M.from,
                     {
-                        audio: res,
+                        video: res,
                         mimetype: 'video/mp4',
                         fileName: videoDetails.title
                     },
