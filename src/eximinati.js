@@ -47,7 +47,7 @@ const start = async () => {
     client.prefix = process.env.PREFIX || '!'
     client.openAi = process.env.openAi || null
     client.bgAPI = process.env.BG_API_KEY || null
-    client.mods = (process.env.MODS || '923087880256').split(',')
+    client.mods = (process.env.MODS || '919609900020').split(',')
 
     //Database
     client.DB = new QuickDB({
