@@ -7,7 +7,7 @@ module.exports = {
     react: "✅",
     description: 'Summons a random anime character to marry',
     async execute(client, arg, M) {
-        const result = await client.utils.fetch('https://reina-api.vercel.app/api/mwl/random')
+        const result = await client.utils.fetch('https://aurora-api.vercel.app/haigusha')
         let text = '========*HAIGUSHA*========\n'
         text += `*Name:* ${result.data.name}\n`
         text += `*Japanese*: ${result.data.original_name}\n`
